@@ -10,13 +10,13 @@ class LoggingMiddleware:
 
     def __call__(self, request):
         logging.info(f"Request URL: {request.method} - {request.path}")
-        logging.info(
-            f"Request DATA: {request.GET.dict() if request.method == 'GET' else json.loads(request.body or '[]')}"
-        )
-        logging.info(f"Request USER: {request.user}")
+        data = request.GET.dict() if request.method == "GET" else json.loads(request.body or "[]")
+        if "password" not in data:
+            logging.info(f"Request DATA: {data}")
 
         response = self.get_response(request)
 
+        logging.info(f"Request USER: {request.user}")
         logging.info(f"Response STATUS_CODE: {response.status_code}")
 
         # Log response data
