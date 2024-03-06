@@ -1,0 +1,8 @@
+name: lgabis-invera-challenge-test
+
+services:
+  drf:
+    build: .
+    command: python manage.py test
+    ports:
+      - "8000:8000"
