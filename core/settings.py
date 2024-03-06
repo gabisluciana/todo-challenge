@@ -27,6 +27,7 @@ BASE_APPS = [
 
 LOCAL_APPS = [
     "tasks",
+    "users",
 ]
 
 THIRD_APPS = [
