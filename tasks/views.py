@@ -17,7 +17,7 @@ class TaskViewSet(ModelViewSet):
     filterset_class = TaskFilter
 
     def get_queryset(self):
-        return self.get_serializer().Meta.model.objects.filter(author=self.request.user)
+        return self.get_serializer().Meta.model.objects.filter(author=self.request.user.id)
 
     def perform_create(self, serializer):
         serializer.save(author=self.request.user)
