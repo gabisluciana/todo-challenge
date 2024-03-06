@@ -11,7 +11,7 @@ El usuario de la aplicación tiene que ser capaz de:
 - Poder ver una lista de todas las tareas existentes
 - Filtrar/buscar tareas por fecha de creación y/o por el contenido de la misma
 
-## Prerequisites
+## Requisitos Previos
 
 Antes de comenzar, verifica tener los siguientes requerimientos:
 
@@ -21,9 +21,9 @@ Antes de comenzar, verifica tener los siguientes requerimientos:
   ```sh
   python3.10 --version
   ```
-## Uso
+## Modo de Uso
 
-1. Primero, ejecutarlo siguiendo los pasos de [Ejecución en Docker](#ejecución-en-docker).
+1. Primero, ejecutalo siguiendo los pasos de [Ejecución en Docker](#ejecución-en-docker).
 2. La API expone los siguientes endpoints:
     1. Un POST endpoint para [crear cuenta](#crear-cuenta) en: `http://127.0.0.1:8000/api/register/`
     2. Un POST endpoint para [login](#login) en: `http://127.0.0.1:8000/api/login/`
