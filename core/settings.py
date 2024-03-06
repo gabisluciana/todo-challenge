@@ -39,7 +39,7 @@ THIRD_APPS = [
 
 INSTALLED_APPS = BASE_APPS + LOCAL_APPS + THIRD_APPS
 
-MIDDLEWARE = [
+BASE_MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -48,6 +48,12 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
+
+LOCAL_MIDDLEWARE = [
+    "customlog.middleware.LoggingMiddleware",
+]
+
+MIDDLEWARE = BASE_MIDDLEWARE + LOCAL_MIDDLEWARE
 
 ROOT_URLCONF = "core.urls"
 
